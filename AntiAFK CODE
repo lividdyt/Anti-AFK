@@ -1,0 +1,87 @@
+local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+ 
+local PhantomForcesWindow = Library:NewWindow("Anti AFK Menu")
+ 
+local KillingCheats = PhantomForcesWindow:NewSection("Main")
+
+getgenv().AntiAFKToggle = false;
+getgenv().AutoJump = false;
+
+ 
+KillingCheats:CreateToggle("Anti AFK", function(bool)
+    getgenv().AntiAFKToggle = bool
+    print("is ", bool)
+
+    if bool then
+        antiAFK();
+    end
+
+end)
+
+KillingCheats:CreateToggle("Auto Jump", function(bool)
+    getgenv().AutoJump = bool
+    print("is ", bool)
+
+    if bool then
+        autoJump();
+    end
+    
+
+end)
+
+
+function antiAFK()
+    spawn(function()
+        while getgenv().AntiAFKToggle == true do
+
+            while true do
+                wait(3)
+            local args = {
+                [1] = "I am AFK rn dont bother me", -- put any message here you want to say
+                [2] = "All"
+            }
+            
+            game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+            wait(5)
+
+            local args = {
+                [1] = "I like to eat apples ngl wbu guys!!", -- put any message here you want to say
+                [2] = "All"
+            }
+            
+            game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+            wait(2.6)
+            
+            local args = {
+                [1] = "how crazy is it that i am afk rn!!", -- put any message here you want to say
+                [2] = "All"
+            }
+            
+            game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+
+
+                end
+            
+            
+        end
+    end)
+end
+
+function autoJump()
+    spawn(function()
+        while getgenv().AutoJump == true do
+
+            while true do
+                wait(6.6)
+                game:GetService("Workspace").TheNubReal.Humanoid.Jump = true
+
+                end
+            
+            
+        end
+    end)
+end
+
