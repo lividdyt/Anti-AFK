@@ -188,7 +188,7 @@ function antiAFK()
             game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
 
 
-
+                -- You can copy the messages and make more and more messages as you want --
                 end
             
             
